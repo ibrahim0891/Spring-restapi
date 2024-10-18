@@ -8,7 +8,7 @@ import jakarta.persistence.Id
 @Entity
 data class BookModel (
        @Id
-       @GeneratedValue(strategy = GenerationType.IDENTITY)
+       @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Int = 1,
         var imageLink: String ="",
         var bookName: String = "Futurama",

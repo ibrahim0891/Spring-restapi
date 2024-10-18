@@ -20,4 +20,23 @@ class BookServiceImpl(
         return repo.save(book)
     }
 
+    override fun updateBook(id: Int, updateBook: BookModel): BookModel? {
+        if(repo.existsById(id)){
+            var newbook : BookModel = repo.findById(id).orElse(null)
+            newbook.id = id
+            newbook.bookName = updateBook.bookName
+            return repo.save(newbook)
+        }
+        return  null
+    }
+
+    override fun deleteBook(id: Int): Boolean {
+        if(repo.existsById(id)){
+            repo.deleteById(id)
+            return true
+        }
+        return  false
+
+    }
+
 }
