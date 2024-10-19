@@ -27,8 +27,8 @@ class BookController(
     }
     //save book
     @PostMapping("books")
-    fun saveBook(@RequestBody book: BookModel) {
-        bookService.saveBook(book)
+    fun saveBook(@RequestBody book: BookModel): BookModel {
+        return bookService.saveBook(book)
     }
 
     @PutMapping("books/{id}")
@@ -38,6 +38,5 @@ class BookController(
     fun deleteBook(@PathVariable id : Int ) = bookService.deleteBook(id)
 
 
-    // Update my database resorce.my name is hamim.
-    // Update my database resorce.my name is ibrahim
+
 }
